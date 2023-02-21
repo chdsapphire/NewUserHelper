@@ -1,30 +1,38 @@
 // ==UserScript==
 // @name         New User Helper
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.7
 // @description  try to take over the world!
 // @author       You
 // @match        http://www.charmdate.com/clagt/**
+// @match        http://www1.charmdate.com/clagt/**
+// @match        http://www2.charmdate.com/clagt/**
+// @match        http://www3.charmdate.com/clagt/**
+// @match        http://www4.charmdate.com/clagt/**
+// @match        http://www5.charmdate.com/clagt/**
+// @match        http://www6.charmdate.com/clagt/**
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=charmdate.com
+// @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @grant        none
 // @updateURL https://github.com/chdsapphire/NewUserHelper/raw/main/New%20User%20Helper%201.user.js
 // @downloadURL https://github.com/chdsapphire/NewUserHelper/raw/main/New%20User%20Helper%201.user.js
 // ==/UserScript==
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 ////EMF
 (function() {
-    'use strict';
+  'use strict';
 
-    var buttonExists = false;
+  var buttonExists = false;
 
-    $(document).ready(function() {
-      var targetElem = $('a[href="/clagt/emf_men_women_unprinted.php"]');
-        targetElem.hover(function () {
-            if (!buttonExists) {
-                var btn = $('<button id="test-button">HELP</button>');
-                btn.click(function() {
-                   // Create the message element
+  $(document).ready(function() {
+    var targetElem = $('a[href="/clagt/emf_men_women_unprinted.php"]');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">HELP: Листи</button>');
+              btn.click(function() {
+                 // Create the message element
 const message = document.createElement('div');
 message.innerHTML = 'Листи.Твій основний розділ: <br> – Search➡️Search EMF Mail (sent by gentleman): – <a href="https://drive.google.com/file/d/1HoLIC5abISaIQ_dHQU4Eg9onZ0yLUSIT/view?usp=sharing">Отримані</a> <br> – Search➡️Search EMF Mail (sent by lady):–  <a href="https://drive.google.com/file/d/1HthClc48gfSRlyrwECq6ydOQ-t8jLVYs/view?usp=sharing">Відправлені</a> <br> – First EMF Mail – <a href="https://drive.google.com/file/d/1Hz3zTbapMd-7KobHu0mati-1bpUZjrWE/view?usp=sharing">Листи Після чату</a>  <br> – From Ladies ➡️ Compose Reply – <a href="https://drive.google.com/file/d/1I-7IgI8Sko8LTgucbAOEgI0i0FbGn0Pb/view?usp=sharing">Відправити Лист</a>';
 message.style.marginTop = '10px';
@@ -45,8 +53,8 @@ closeButton.style.cursor = 'pointer';
 
 // Add click event listener to the close button element
 closeButton.addEventListener('click', () => {
-  // Remove the window element from the body
-  document.body.removeChild(windowElement);
+// Remove the window element from the body
+document.body.removeChild(windowElement);
 });
 
 // Create the VIDEO button element
@@ -62,7 +70,7 @@ videoButton.style.cursor = 'pointer';
 
 // Add click event listener to the VIDEO button element
 videoButton.addEventListener('click', () => {
-  window.open('https://drive.google.com/file/d/1HZKIIuSEgQD0x-YlK19bya-TGanDKJfi/view?usp=sharing');
+window.open('https://drive.google.com/file/d/1HZKIIuSEgQD0x-YlK19bya-TGanDKJfi/view?usp=sharing');
 });
 
 // Create the TEXT button element
@@ -77,7 +85,7 @@ textButton.style.cursor = 'pointer';
 
 // Add click event listener to the TEXT button element
 textButton.addEventListener('click', () => {
-  window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.4pdl0drutv6q');
+window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.4pdl0drutv6q');
 });
 
 // Create the buttons container element
@@ -110,17 +118,18 @@ windowElement.appendChild(buttonsContainer);
 
 // Add the window element to the body
 document.body.appendChild(windowElement);
-                });
-                $(this).after(btn);
-                buttonExists = true;
-                setTimeout(function() {
-                    $('#test-button').remove();
-                    buttonExists = false;
-                }, 3000);
-            }
-        });
-    });
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
 })();
+
 ////From Lady Compose Reply
 (function() {
   'use strict';
@@ -135,7 +144,7 @@ document.body.appendChild(windowElement);
               btn.click(function() {
                  // Create the message element
 const message = document.createElement('div');
-message.innerHTML = 'Тут можно відправити лист тому з ким був чат,або хто присилав лист тобі: <br> – <a href="https://drive.google.com/file/d/1IiWvHSKVF17jLM-Be3RJzNhl3DGS3cTI/view?usp=sharing">Приклад куди вставити ід</a>';
+message.innerHTML = 'Тут можно відправити лист тому з ким був чат,або хто присилав лист тобі: <br> – <a href="https://drive.google.com/file/d/1IiWvHSKVF17jLM-Be3RJzNhl3DGS3cTI/view?usp=sharing">Приклад куди вставити ід</a> ';
 message.style.marginTop = '10px';
 message.style.padding = '10px';
 message.style.border = '1px solid lightblue';
@@ -354,6 +363,224 @@ document.body.appendChild(windowElement);
                  // Create the message element
 const message = document.createElement('div');
 message.innerHTML = 'Відправлені листи: <br> – Як відрізнити прочитаний і не прочитаний лист: – <a href="https://drive.google.com/file/d/1Ih5aZxXBk0H9yOeTu_OeYqtgAcK7xZIL/view?usp=sharing">Скрін</a><br> – Як відрізнити прочитаний і не прочитаний лист: 🔻– -Unread. Empty - Read. ';
+message.style.marginTop = '10px';
+message.style.padding = '10px';
+message.style.border = '1px solid lightblue';
+message.style.borderRadius = '3px';
+
+// Create the close button element
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '&times;';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '5px';
+closeButton.style.right = '5px';
+closeButton.style.backgroundColor = 'transparent';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+
+// Add click event listener to the close button element
+closeButton.addEventListener('click', () => {
+// Remove the window element from the body
+document.body.removeChild(windowElement);
+});
+
+// Create the VIDEO button element
+const videoButton = document.createElement('button');
+videoButton.textContent = 'VIDEO';
+videoButton.style.marginTop = '10px';
+videoButton.style.marginRight = '10px';
+videoButton.style.padding = '10px';
+videoButton.style.backgroundColor = 'lightblue';
+videoButton.style.border = 'none';
+videoButton.style.borderRadius = '3px';
+videoButton.style.cursor = 'pointer';
+
+// Add click event listener to the VIDEO button element
+videoButton.addEventListener('click', () => {
+window.open('https://drive.google.com/file/d/1HZKIIuSEgQD0x-YlK19bya-TGanDKJfi/view?usp=sharing');
+});
+
+// Create the TEXT button element
+const textButton = document.createElement('button');
+textButton.textContent = 'TEXT';
+textButton.style.marginTop = '10px';
+textButton.style.padding = '10px';
+textButton.style.backgroundColor = 'lightblue';
+textButton.style.border = 'none';
+textButton.style.borderRadius = '3px';
+textButton.style.cursor = 'pointer';
+
+// Add click event listener to the TEXT button element
+textButton.addEventListener('click', () => {
+window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.4pdl0drutv6q');
+});
+
+// Create the buttons container element
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'center';
+
+// Add the VIDEO and TEXT button elements to the buttons container element
+buttonsContainer.appendChild(videoButton);
+buttonsContainer.appendChild(textButton);
+
+// Create the window element
+const windowElement = document.createElement('div');
+windowElement.style.position = 'fixed';
+windowElement.style.top = '50%';
+windowElement.style.left = '50%';
+windowElement.style.transform = 'translate(-50%, -50%)';
+windowElement.style.backgroundColor = 'white';
+windowElement.style.padding = '20px';
+windowElement.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+
+// Add the close button element to the window element
+windowElement.appendChild(closeButton);
+
+// Add the message element to the window element
+windowElement.appendChild(message);
+
+// Add the buttons container element to the window element
+windowElement.appendChild(buttonsContainer);
+
+// Add the window element to the body
+document.body.appendChild(windowElement);
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
+})();
+////First EMF Mail
+(function() {
+  'use strict';
+
+  var buttonExists = false;
+
+  $(document).ready(function() {
+    var targetElem = $('a[href="/clagt/first_emf.php"]');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">HELP:Листи після чату(ПЧ)</button>');
+              btn.click(function() {
+                 // Create the message element
+const message = document.createElement('div');
+message.innerHTML = 'Листи після чату.Треба закривати одразу після чату: <br> – Навігація: – <a href="https://drive.google.com/file/d/1Irn3Ci9Vwi0BN7kbrRZrwsPDqSPAscB5/view?usp=sharing">Скрін</a> ';
+message.style.marginTop = '10px';
+message.style.padding = '10px';
+message.style.border = '1px solid lightblue';
+message.style.borderRadius = '3px';
+
+// Create the close button element
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '&times;';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '5px';
+closeButton.style.right = '5px';
+closeButton.style.backgroundColor = 'transparent';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+
+// Add click event listener to the close button element
+closeButton.addEventListener('click', () => {
+// Remove the window element from the body
+document.body.removeChild(windowElement);
+});
+
+// Create the VIDEO button element
+const videoButton = document.createElement('button');
+videoButton.textContent = 'VIDEO';
+videoButton.style.marginTop = '10px';
+videoButton.style.marginRight = '10px';
+videoButton.style.padding = '10px';
+videoButton.style.backgroundColor = 'lightblue';
+videoButton.style.border = 'none';
+videoButton.style.borderRadius = '3px';
+videoButton.style.cursor = 'pointer';
+
+// Add click event listener to the VIDEO button element
+videoButton.addEventListener('click', () => {
+window.open('https://drive.google.com/file/d/1HZKIIuSEgQD0x-YlK19bya-TGanDKJfi/view?usp=sharing');
+});
+
+// Create the TEXT button element
+const textButton = document.createElement('button');
+textButton.textContent = 'TEXT';
+textButton.style.marginTop = '10px';
+textButton.style.padding = '10px';
+textButton.style.backgroundColor = 'lightblue';
+textButton.style.border = 'none';
+textButton.style.borderRadius = '3px';
+textButton.style.cursor = 'pointer';
+
+// Add click event listener to the TEXT button element
+textButton.addEventListener('click', () => {
+window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.4pdl0drutv6q');
+});
+
+// Create the buttons container element
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'center';
+
+// Add the VIDEO and TEXT button elements to the buttons container element
+buttonsContainer.appendChild(videoButton);
+buttonsContainer.appendChild(textButton);
+
+// Create the window element
+const windowElement = document.createElement('div');
+windowElement.style.position = 'fixed';
+windowElement.style.top = '50%';
+windowElement.style.left = '50%';
+windowElement.style.transform = 'translate(-50%, -50%)';
+windowElement.style.backgroundColor = 'white';
+windowElement.style.padding = '20px';
+windowElement.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+
+// Add the close button element to the window element
+windowElement.appendChild(closeButton);
+
+// Add the message element to the window element
+windowElement.appendChild(message);
+
+// Add the buttons container element to the window element
+windowElement.appendChild(buttonsContainer);
+
+// Add the window element to the body
+document.body.appendChild(windowElement);
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
+})();
+////Search
+(function() {
+  'use strict';
+
+  var buttonExists = false;
+
+  $(document).ready(function() {
+    var targetElem = $('a[href="/clagt/agent_search_mw.php"]');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">HELP:Пошук,Отримані і Відправлені листи</button>');
+              btn.click(function() {
+                 // Create the message element
+const message = document.createElement('div');
+message.innerHTML = 'Листи.Твій основний розділ: <br> – Search➡️Search EMF Mail (sent by gentleman): – <a href="https://drive.google.com/file/d/1HoLIC5abISaIQ_dHQU4Eg9onZ0yLUSIT/view?usp=sharing">Отримані</a> <br> – Search➡️Search EMF Mail (sent by lady):–  <a href="https://drive.google.com/file/d/1HthClc48gfSRlyrwECq6ydOQ-t8jLVYs/view?usp=sharing">Відправлені</a> ';
 message.style.marginTop = '10px';
 message.style.padding = '10px';
 message.style.border = '1px solid lightblue';
@@ -667,7 +894,6 @@ document.body.appendChild(windowElement);
   });
 })();
 
-////////////////////////////////////////////////////////////////////////////////////////////////
 ////Love Call
 (function() {
     'use strict';
@@ -1108,8 +1334,6 @@ document.body.appendChild(windowElement);
   });
 })();
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////
 ////Chat
 (function() {
     'use strict';
@@ -1331,22 +1555,21 @@ document.body.appendChild(windowElement);
     });
 })();
 
-
-////Chat Search
+////////Chat Ended Chats
 (function() {
   'use strict';
 
   var buttonExists = false;
 
-$(document).ready(function() {
-      var targetElem = $('a[href="/clagt/livechat/search.php"]');
+  $(document).ready(function() {
+    var targetElem = $('b.livebt:contains("Ended Chats")');
       targetElem.hover(function () {
           if (!buttonExists) {
-              var btn = $('<button id="test-button">HELP</button>');
+              var btn = $('<button id="test-button">HELP:Закінчені чати</button>');
               btn.click(function() {
                  // Create the message element
 const message = document.createElement('div');
-message.innerHTML = 'Пошук по ID, хто,коли скільки витрачав в межах нашої адмін панелі:<br>  <br> – Як налаштувати пошук	 – <a href="https://drive.google.com/file/d/1IEs8pIRIrJt8Fi7yGmwOfUXQxBb2p_0X/view?usp=sharing"> Скрін</a> <br> ';
+message.innerHTML = 'Закінчені чати:<br>  <br> – Invitation ID	 – <a href="https://drive.google.com/file/d/1IESdflSLFp2RBBuqD0u3-9s5Cm8WUIKm/view?usp=sharing"> Тут можно прочитати чат</a> <br> ';
 message.style.marginTop = '10px';
 message.style.padding = '10px';
 message.style.border = '1px solid lightblue';
@@ -1398,6 +1621,336 @@ textButton.style.cursor = 'pointer';
 // Add click event listener to the TEXT button element
 textButton.addEventListener('click', () => {
 window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.poxd9vz5jqhb');
+});
+
+// Create the buttons container element
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'center';
+
+// Add the VIDEO and TEXT button elements to the buttons container element
+buttonsContainer.appendChild(videoButton);
+buttonsContainer.appendChild(textButton);
+
+// Create the window element
+const windowElement = document.createElement('div');
+windowElement.style.position = 'fixed';
+windowElement.style.top = '50%';
+windowElement.style.left = '50%';
+windowElement.style.transform = 'translate(-50%, -50%)';
+windowElement.style.backgroundColor = 'white';
+windowElement.style.padding = '20px';
+windowElement.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+
+// Add the close button element to the window element
+windowElement.appendChild(closeButton);
+
+// Add the message element to the window element
+windowElement.appendChild(message);
+
+// Add the buttons container element to the window element
+windowElement.appendChild(buttonsContainer);
+
+// Add the window element to the body
+document.body.appendChild(windowElement);
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
+})();
+
+////Say Hi
+(function() {
+  'use strict';
+
+  var buttonExists = false;
+
+$(document).ready(function() {
+      var targetElem = $('a[href="/clagt/cupidnote/index.php"]');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">HELP</button>');
+              btn.click(function() {
+                 // Create the message element
+const message = document.createElement('div');
+message.innerHTML = 'Say Hi листи від джентельмена.<br>  <br> – Pending Processing: – Отримані Say  Hi   <br> – Search – <a href="https://drive.google.com/file/d/1J-7SQRyUbpLEPQ5zz8_ufI79LcpiyhLd/view?usp=sharing">Як налаштувати</a> ';
+message.style.marginTop = '10px';
+message.style.padding = '10px';
+message.style.border = '1px solid lightblue';
+message.style.borderRadius = '3px';
+
+// Create the close button element
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '&times;';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '5px';
+closeButton.style.right = '5px';
+closeButton.style.backgroundColor = 'transparent';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+
+// Add click event listener to the close button element
+closeButton.addEventListener('click', () => {
+// Remove the window element from the body
+document.body.removeChild(windowElement);
+});
+
+// Create the VIDEO button element
+const videoButton = document.createElement('button');
+videoButton.textContent = 'VIDEO';
+videoButton.style.marginTop = '10px';
+videoButton.style.marginRight = '10px';
+videoButton.style.padding = '10px';
+videoButton.style.backgroundColor = 'lightblue';
+videoButton.style.border = 'none';
+videoButton.style.borderRadius = '3px';
+videoButton.style.cursor = 'pointer';
+
+// Add click event listener to the VIDEO button element
+videoButton.addEventListener('click', () => {
+window.open('https://drive.google.com/file/d/1H_8rJzIE-h6fopy0_7D175PxdN0T0sLj/view?usp=sharing');
+});
+
+// Create the TEXT button element
+const textButton = document.createElement('button');
+textButton.textContent = 'TEXT';
+textButton.style.marginTop = '10px';
+textButton.style.padding = '10px';
+textButton.style.backgroundColor = 'lightblue';
+textButton.style.border = 'none';
+textButton.style.borderRadius = '3px';
+textButton.style.cursor = 'pointer';
+
+// Add click event listener to the TEXT button element
+textButton.addEventListener('click', () => {
+window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.fk1aicucj5xn');
+});
+
+// Create the buttons container element
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'center';
+
+// Add the VIDEO and TEXT button elements to the buttons container element
+buttonsContainer.appendChild(videoButton);
+buttonsContainer.appendChild(textButton);
+
+// Create the window element
+const windowElement = document.createElement('div');
+windowElement.style.position = 'fixed';
+windowElement.style.top = '50%';
+windowElement.style.left = '50%';
+windowElement.style.transform = 'translate(-50%, -50%)';
+windowElement.style.backgroundColor = 'white';
+windowElement.style.padding = '20px';
+windowElement.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+
+// Add the close button element to the window element
+windowElement.appendChild(closeButton);
+
+// Add the message element to the window element
+windowElement.appendChild(message);
+
+// Add the buttons container element to the window element
+windowElement.appendChild(buttonsContainer);
+
+// Add the window element to the body
+document.body.appendChild(windowElement);
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
+})();
+
+////Say Hi Search Say Hi messages
+(function() {
+  'use strict';
+
+  var buttonExists = false;
+
+$(document).ready(function() {
+      var targetElem = $('a[href="/clagt/cupidnote/search.php"]');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">HELP</button>');
+              btn.click(function() {
+                 // Create the message element
+const message = document.createElement('div');
+message.innerHTML = 'Say Hi листи від джентельмена.<br>  <br> – Pending Processing: – Отримані Say  Hi   <br> – Search – <a href="https://drive.google.com/file/d/1J-7SQRyUbpLEPQ5zz8_ufI79LcpiyhLd/view?usp=sharing">Як налаштувати</a> ';
+message.style.marginTop = '10px';
+message.style.padding = '10px';
+message.style.border = '1px solid lightblue';
+message.style.borderRadius = '3px';
+
+// Create the close button element
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '&times;';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '5px';
+closeButton.style.right = '5px';
+closeButton.style.backgroundColor = 'transparent';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+
+// Add click event listener to the close button element
+closeButton.addEventListener('click', () => {
+// Remove the window element from the body
+document.body.removeChild(windowElement);
+});
+
+// Create the VIDEO button element
+const videoButton = document.createElement('button');
+videoButton.textContent = 'VIDEO';
+videoButton.style.marginTop = '10px';
+videoButton.style.marginRight = '10px';
+videoButton.style.padding = '10px';
+videoButton.style.backgroundColor = 'lightblue';
+videoButton.style.border = 'none';
+videoButton.style.borderRadius = '3px';
+videoButton.style.cursor = 'pointer';
+
+// Add click event listener to the VIDEO button element
+videoButton.addEventListener('click', () => {
+window.open('https://drive.google.com/file/d/1H_8rJzIE-h6fopy0_7D175PxdN0T0sLj/view?usp=sharing');
+});
+
+// Create the TEXT button element
+const textButton = document.createElement('button');
+textButton.textContent = 'TEXT';
+textButton.style.marginTop = '10px';
+textButton.style.padding = '10px';
+textButton.style.backgroundColor = 'lightblue';
+textButton.style.border = 'none';
+textButton.style.borderRadius = '3px';
+textButton.style.cursor = 'pointer';
+
+// Add click event listener to the TEXT button element
+textButton.addEventListener('click', () => {
+window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.fk1aicucj5xn');
+});
+
+// Create the buttons container element
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'center';
+
+// Add the VIDEO and TEXT button elements to the buttons container element
+buttonsContainer.appendChild(videoButton);
+buttonsContainer.appendChild(textButton);
+
+// Create the window element
+const windowElement = document.createElement('div');
+windowElement.style.position = 'fixed';
+windowElement.style.top = '50%';
+windowElement.style.left = '50%';
+windowElement.style.transform = 'translate(-50%, -50%)';
+windowElement.style.backgroundColor = 'white';
+windowElement.style.padding = '20px';
+windowElement.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+
+// Add the close button element to the window element
+windowElement.appendChild(closeButton);
+
+// Add the message element to the window element
+windowElement.appendChild(message);
+
+// Add the buttons container element to the window element
+windowElement.appendChild(buttonsContainer);
+
+// Add the window element to the body
+document.body.appendChild(windowElement);
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
+})();
+
+////Gifts & Flowers
+(function() {
+  'use strict';
+
+  var buttonExists = false;
+
+$(document).ready(function() {
+      var targetElem = $('a[href="/clagt/gift/goods_delivery.php"]');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">HELP</button>');
+              btn.click(function() {
+                 // Create the message element
+const message = document.createElement('div');
+message.innerHTML = 'Подарунки від джентельмена.<br> – Step 1: Pending Dispatch: – Новий подарунок <br> – Step 2: Dispatched Orders: – Очікує доставки <br> – Step 3: Request Credits: – Подарунок отриманий клієнткою <br>– Step 4. Pending Credits: – Очкує кредити від сайту <br>– Step 5: Completed: – Кредити зараховані в баланс анкети <br>– Delivery Specification: – Список актуальних подарунків на сайті';
+message.style.marginTop = '10px';
+message.style.padding = '10px';
+message.style.border = '1px solid lightblue';
+message.style.borderRadius = '3px';
+
+// Create the close button element
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '&times;';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '5px';
+closeButton.style.right = '5px';
+closeButton.style.backgroundColor = 'transparent';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+
+// Add click event listener to the close button element
+closeButton.addEventListener('click', () => {
+// Remove the window element from the body
+document.body.removeChild(windowElement);
+});
+
+// Create the VIDEO button element
+const videoButton = document.createElement('button');
+videoButton.textContent = 'VIDEO';
+videoButton.style.marginTop = '10px';
+videoButton.style.marginRight = '10px';
+videoButton.style.padding = '10px';
+videoButton.style.backgroundColor = 'lightblue';
+videoButton.style.border = 'none';
+videoButton.style.borderRadius = '3px';
+videoButton.style.cursor = 'pointer';
+
+// Add click event listener to the VIDEO button element
+videoButton.addEventListener('click', () => {
+window.open('https://drive.google.com/file/d/1J02KGuVZS6B4N99mzSIul4rjZqPB5cth/view?usp=sharing');
+});
+
+// Create the TEXT button element
+const textButton = document.createElement('button');
+textButton.textContent = 'TEXT';
+textButton.style.marginTop = '10px';
+textButton.style.padding = '10px';
+textButton.style.backgroundColor = 'lightblue';
+textButton.style.border = 'none';
+textButton.style.borderRadius = '3px';
+textButton.style.cursor = 'pointer';
+
+// Add click event listener to the TEXT button element
+textButton.addEventListener('click', () => {
+window.open('Пусто');
 });
 
 // Create the buttons container element
