@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         New User Helper
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  try to take over the world!
 // @author       You
 // @match        http://www.charmdate.com/clagt/**
@@ -121,7 +121,442 @@ document.body.appendChild(windowElement);
         });
     });
 })();
+////Вхідні:
+(function() {
+  'use strict';
 
+  var buttonExists = false;
+
+  $(document).ready(function() {
+    var targetElem = $('h2.btva:contains("Search Results (sent by gentleman):")');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">Отримані листи HELP</button>');
+              btn.click(function() {
+                 // Create the message element
+const message = document.createElement('div');
+message.innerHTML = 'Отримагі листи: <br> – Новий отриманий лист: – <a href="https://drive.google.com/file/d/1IWAWPbwvx7QAymcZEJ-FmHwSy3WDgUnh/view?usp=sharing">Скрін</a> <br> – Новий відкритий лист,на котрий ще не відповіли: – <a href="https://drive.google.com/file/d/1IeiPI1fqY-2I5VViyD9RVpRUfuyj2gUD/view?usp=sharing">Скрін</a> <br> – Лист,на котрий вже відповіли: – <a href="https://drive.google.com/file/d/1IgHIV2XH7SI8OeJrFZKskL-jBDT4fcJi/view?usp=sharing">Скрін</a>';
+message.style.marginTop = '10px';
+message.style.padding = '10px';
+message.style.border = '1px solid lightblue';
+message.style.borderRadius = '3px';
+
+// Create the close button element
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '&times;';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '5px';
+closeButton.style.right = '5px';
+closeButton.style.backgroundColor = 'transparent';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+
+// Add click event listener to the close button element
+closeButton.addEventListener('click', () => {
+// Remove the window element from the body
+document.body.removeChild(windowElement);
+});
+
+// Create the VIDEO button element
+const videoButton = document.createElement('button');
+videoButton.textContent = 'VIDEO';
+videoButton.style.marginTop = '10px';
+videoButton.style.marginRight = '10px';
+videoButton.style.padding = '10px';
+videoButton.style.backgroundColor = 'lightblue';
+videoButton.style.border = 'none';
+videoButton.style.borderRadius = '3px';
+videoButton.style.cursor = 'pointer';
+
+// Add click event listener to the VIDEO button element
+videoButton.addEventListener('click', () => {
+window.open('https://drive.google.com/file/d/1HZKIIuSEgQD0x-YlK19bya-TGanDKJfi/view?usp=sharing');
+});
+
+// Create the TEXT button element
+const textButton = document.createElement('button');
+textButton.textContent = 'TEXT';
+textButton.style.marginTop = '10px';
+textButton.style.padding = '10px';
+textButton.style.backgroundColor = 'lightblue';
+textButton.style.border = 'none';
+textButton.style.borderRadius = '3px';
+textButton.style.cursor = 'pointer';
+
+// Add click event listener to the TEXT button element
+textButton.addEventListener('click', () => {
+window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.4pdl0drutv6q');
+});
+
+// Create the buttons container element
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'center';
+
+// Add the VIDEO and TEXT button elements to the buttons container element
+buttonsContainer.appendChild(videoButton);
+buttonsContainer.appendChild(textButton);
+
+// Create the window element
+const windowElement = document.createElement('div');
+windowElement.style.position = 'fixed';
+windowElement.style.top = '50%';
+windowElement.style.left = '50%';
+windowElement.style.transform = 'translate(-50%, -50%)';
+windowElement.style.backgroundColor = 'white';
+windowElement.style.padding = '20px';
+windowElement.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+
+// Add the close button element to the window element
+windowElement.appendChild(closeButton);
+
+// Add the message element to the window element
+windowElement.appendChild(message);
+
+// Add the buttons container element to the window element
+windowElement.appendChild(buttonsContainer);
+
+// Add the window element to the body
+document.body.appendChild(windowElement);
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
+})();
+////Відправлені
+(function() {
+  'use strict';
+
+  var buttonExists = false;
+
+  $(document).ready(function() {
+    var targetElem = $('h2.btva:contains("Search Results (sent by lady):")');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">HELP:Відправлені листи</button>');
+              btn.click(function() {
+                 // Create the message element
+const message = document.createElement('div');
+message.innerHTML = 'Відправлені листи: <br> – Як відрізнити прочитаний і не прочитаний лист: – <a href="https://drive.google.com/file/d/1Ih5aZxXBk0H9yOeTu_OeYqtgAcK7xZIL/view?usp=sharing">Скрін</a><br> – Як відрізнити прочитаний і не прочитаний лист: 🔻– -Unread. Empty - Read. ';
+message.style.marginTop = '10px';
+message.style.padding = '10px';
+message.style.border = '1px solid lightblue';
+message.style.borderRadius = '3px';
+
+// Create the close button element
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '&times;';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '5px';
+closeButton.style.right = '5px';
+closeButton.style.backgroundColor = 'transparent';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+
+// Add click event listener to the close button element
+closeButton.addEventListener('click', () => {
+// Remove the window element from the body
+document.body.removeChild(windowElement);
+});
+
+// Create the VIDEO button element
+const videoButton = document.createElement('button');
+videoButton.textContent = 'VIDEO';
+videoButton.style.marginTop = '10px';
+videoButton.style.marginRight = '10px';
+videoButton.style.padding = '10px';
+videoButton.style.backgroundColor = 'lightblue';
+videoButton.style.border = 'none';
+videoButton.style.borderRadius = '3px';
+videoButton.style.cursor = 'pointer';
+
+// Add click event listener to the VIDEO button element
+videoButton.addEventListener('click', () => {
+window.open('https://drive.google.com/file/d/1HZKIIuSEgQD0x-YlK19bya-TGanDKJfi/view?usp=sharing');
+});
+
+// Create the TEXT button element
+const textButton = document.createElement('button');
+textButton.textContent = 'TEXT';
+textButton.style.marginTop = '10px';
+textButton.style.padding = '10px';
+textButton.style.backgroundColor = 'lightblue';
+textButton.style.border = 'none';
+textButton.style.borderRadius = '3px';
+textButton.style.cursor = 'pointer';
+
+// Add click event listener to the TEXT button element
+textButton.addEventListener('click', () => {
+window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.4pdl0drutv6q');
+});
+
+// Create the buttons container element
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'center';
+
+// Add the VIDEO and TEXT button elements to the buttons container element
+buttonsContainer.appendChild(videoButton);
+buttonsContainer.appendChild(textButton);
+
+// Create the window element
+const windowElement = document.createElement('div');
+windowElement.style.position = 'fixed';
+windowElement.style.top = '50%';
+windowElement.style.left = '50%';
+windowElement.style.transform = 'translate(-50%, -50%)';
+windowElement.style.backgroundColor = 'white';
+windowElement.style.padding = '20px';
+windowElement.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+
+// Add the close button element to the window element
+windowElement.appendChild(closeButton);
+
+// Add the message element to the window element
+windowElement.appendChild(message);
+
+// Add the buttons container element to the window element
+windowElement.appendChild(buttonsContainer);
+
+// Add the window element to the body
+document.body.appendChild(windowElement);
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
+})();
+////Search Search EMF Mail (sent by gentleman):
+(function() {
+  'use strict';
+
+  var buttonExists = false;
+
+  $(document).ready(function() {
+    var targetElem = $('font:contains("Search EMF Mail (sent by gentleman):")');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">Отримані листи HELP</button>');
+              btn.click(function() {
+                 // Create the message element
+const message = document.createElement('div');
+message.innerHTML = 'Отримагі листи: <br> – Новий отриманий лист: – <a href="https://drive.google.com/file/d/1IWAWPbwvx7QAymcZEJ-FmHwSy3WDgUnh/view?usp=sharing">Скрін</a> <br> – Новий відкритий лист,на котрий ще не відповіли: – <a href="https://drive.google.com/file/d/1IeiPI1fqY-2I5VViyD9RVpRUfuyj2gUD/view?usp=sharing">Скрін</a> <br> – Лист,на котрий вже відповіли: – <a href="https://drive.google.com/file/d/1IgHIV2XH7SI8OeJrFZKskL-jBDT4fcJi/view?usp=sharing">Скрін</a>';
+message.style.marginTop = '10px';
+message.style.padding = '10px';
+message.style.border = '1px solid lightblue';
+message.style.borderRadius = '3px';
+
+// Create the close button element
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '&times;';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '5px';
+closeButton.style.right = '5px';
+closeButton.style.backgroundColor = 'transparent';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+
+// Add click event listener to the close button element
+closeButton.addEventListener('click', () => {
+// Remove the window element from the body
+document.body.removeChild(windowElement);
+});
+
+// Create the VIDEO button element
+const videoButton = document.createElement('button');
+videoButton.textContent = 'VIDEO';
+videoButton.style.marginTop = '10px';
+videoButton.style.marginRight = '10px';
+videoButton.style.padding = '10px';
+videoButton.style.backgroundColor = 'lightblue';
+videoButton.style.border = 'none';
+videoButton.style.borderRadius = '3px';
+videoButton.style.cursor = 'pointer';
+
+// Add click event listener to the VIDEO button element
+videoButton.addEventListener('click', () => {
+window.open('https://drive.google.com/file/d/1HZKIIuSEgQD0x-YlK19bya-TGanDKJfi/view?usp=sharing');
+});
+
+// Create the TEXT button element
+const textButton = document.createElement('button');
+textButton.textContent = 'TEXT';
+textButton.style.marginTop = '10px';
+textButton.style.padding = '10px';
+textButton.style.backgroundColor = 'lightblue';
+textButton.style.border = 'none';
+textButton.style.borderRadius = '3px';
+textButton.style.cursor = 'pointer';
+
+// Add click event listener to the TEXT button element
+textButton.addEventListener('click', () => {
+window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.4pdl0drutv6q');
+});
+
+// Create the buttons container element
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'center';
+
+// Add the VIDEO and TEXT button elements to the buttons container element
+buttonsContainer.appendChild(videoButton);
+buttonsContainer.appendChild(textButton);
+
+// Create the window element
+const windowElement = document.createElement('div');
+windowElement.style.position = 'fixed';
+windowElement.style.top = '50%';
+windowElement.style.left = '50%';
+windowElement.style.transform = 'translate(-50%, -50%)';
+windowElement.style.backgroundColor = 'white';
+windowElement.style.padding = '20px';
+windowElement.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+
+// Add the close button element to the window element
+windowElement.appendChild(closeButton);
+
+// Add the message element to the window element
+windowElement.appendChild(message);
+
+// Add the buttons container element to the window element
+windowElement.appendChild(buttonsContainer);
+
+// Add the window element to the body
+document.body.appendChild(windowElement);
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
+})();
+////Search Search  Search EMF Mail (sent by lady): 
+(function() {
+  'use strict';
+
+  var buttonExists = false;
+
+  $(document).ready(function() {
+    var targetElem = $('font:contains(" Search EMF Mail (sent by lady):")');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">HELP:Відправлені листи</button>');
+              btn.click(function() {
+                 // Create the message element
+const message = document.createElement('div');
+message.innerHTML = 'Відправлені листи: <br> – Як відрізнити прочитаний і не прочитаний лист: – <a href="https://drive.google.com/file/d/1Ih5aZxXBk0H9yOeTu_OeYqtgAcK7xZIL/view?usp=sharing">Скрін</a><br> – Як відрізнити прочитаний і не прочитаний лист: 🔻– -Unread. Empty - Read. ';
+message.style.marginTop = '10px';
+message.style.padding = '10px';
+message.style.border = '1px solid lightblue';
+message.style.borderRadius = '3px';
+
+// Create the close button element
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '&times;';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '5px';
+closeButton.style.right = '5px';
+closeButton.style.backgroundColor = 'transparent';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+
+// Add click event listener to the close button element
+closeButton.addEventListener('click', () => {
+// Remove the window element from the body
+document.body.removeChild(windowElement);
+});
+
+// Create the VIDEO button element
+const videoButton = document.createElement('button');
+videoButton.textContent = 'VIDEO';
+videoButton.style.marginTop = '10px';
+videoButton.style.marginRight = '10px';
+videoButton.style.padding = '10px';
+videoButton.style.backgroundColor = 'lightblue';
+videoButton.style.border = 'none';
+videoButton.style.borderRadius = '3px';
+videoButton.style.cursor = 'pointer';
+
+// Add click event listener to the VIDEO button element
+videoButton.addEventListener('click', () => {
+window.open('https://drive.google.com/file/d/1HZKIIuSEgQD0x-YlK19bya-TGanDKJfi/view?usp=sharing');
+});
+
+// Create the TEXT button element
+const textButton = document.createElement('button');
+textButton.textContent = 'TEXT';
+textButton.style.marginTop = '10px';
+textButton.style.padding = '10px';
+textButton.style.backgroundColor = 'lightblue';
+textButton.style.border = 'none';
+textButton.style.borderRadius = '3px';
+textButton.style.cursor = 'pointer';
+
+// Add click event listener to the TEXT button element
+textButton.addEventListener('click', () => {
+window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.4pdl0drutv6q');
+});
+
+// Create the buttons container element
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'center';
+
+// Add the VIDEO and TEXT button elements to the buttons container element
+buttonsContainer.appendChild(videoButton);
+buttonsContainer.appendChild(textButton);
+
+// Create the window element
+const windowElement = document.createElement('div');
+windowElement.style.position = 'fixed';
+windowElement.style.top = '50%';
+windowElement.style.left = '50%';
+windowElement.style.transform = 'translate(-50%, -50%)';
+windowElement.style.backgroundColor = 'white';
+windowElement.style.padding = '20px';
+windowElement.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+
+// Add the close button element to the window element
+windowElement.appendChild(closeButton);
+
+// Add the message element to the window element
+windowElement.appendChild(message);
+
+// Add the buttons container element to the window element
+windowElement.appendChild(buttonsContainer);
+
+// Add the window element to the body
+document.body.appendChild(windowElement);
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
+})();
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////Love Call
