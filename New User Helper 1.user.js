@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         New User Helper
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  try to take over the world!
 // @author       You
 // @match        http://www.charmdate.com/clagt/**
@@ -11,6 +11,7 @@
 // @downloadURL https://github.com/chdsapphire/NewUserHelper/raw/main/New%20User%20Helper%201.user.js
 // ==/UserScript==
 
+////////////////////////////////////////////////////////////////////////////////////////////////
 ////EMF
 (function() {
     'use strict';
@@ -18,7 +19,7 @@
     var buttonExists = false;
 
     $(document).ready(function() {
-        var targetElem = $('a:contains("EMF Mail")');
+      var targetElem = $('a[href="/clagt/emf_men_women_unprinted.php"]');
         targetElem.hover(function () {
             if (!buttonExists) {
                 var btn = $('<button id="test-button">HELP</button>');
@@ -232,7 +233,6 @@ document.body.appendChild(windowElement);
         });
     });
 })();
-
 
 ////Lady Call Me
 (function() {
@@ -454,7 +454,6 @@ document.body.appendChild(windowElement);
   });
 })();
 
-
 //Successful Authorization
 (function() {
   'use strict';
@@ -469,7 +468,7 @@ document.body.appendChild(windowElement);
               btn.click(function() {
                  // Create the message element
 const message = document.createElement('div');
-message.innerHTML = ' Тут можно подивитись кому можно подзвонити – <a href="https://drive.google.com/file/d/1IHgBhlYjsV3-wo4Ca5xRHD41Op4zKlbl/view?usp=sharing">Скрін</a>  ';
+message.innerHTML = ' Тут можно подивитись кому можно подзвонити.Ті кому можно дзвонити – <a href="https://drive.google.com/file/d/1IHgBhlYjsV3-wo4Ca5xRHD41Op4zKlbl/view?usp=sharing">Скрін</a>  ';
 message.style.marginTop = '10px';
 message.style.padding = '10px';
 message.style.border = '1px solid lightblue';
