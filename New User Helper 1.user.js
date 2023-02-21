@@ -121,6 +121,115 @@ document.body.appendChild(windowElement);
         });
     });
 })();
+////From Lady Compose Reply
+(function() {
+  'use strict';
+
+  var buttonExists = false;
+
+  $(document).ready(function() {
+    var targetElem = $('a[href="/clagt/emf_sender.php"]');
+      targetElem.hover(function () {
+          if (!buttonExists) {
+              var btn = $('<button id="test-button">HELP: Відправити лист користувачу</button>');
+              btn.click(function() {
+                 // Create the message element
+const message = document.createElement('div');
+message.innerHTML = 'Тут можно відправити лист тому з ким був чат,або хто присилав лист тобі: <br> – <a href="https://drive.google.com/file/d/1IiWvHSKVF17jLM-Be3RJzNhl3DGS3cTI/view?usp=sharing">Приклад куди вставити ід</a>';
+message.style.marginTop = '10px';
+message.style.padding = '10px';
+message.style.border = '1px solid lightblue';
+message.style.borderRadius = '3px';
+
+// Create the close button element
+const closeButton = document.createElement('button');
+closeButton.innerHTML = '&times;';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '5px';
+closeButton.style.right = '5px';
+closeButton.style.backgroundColor = 'transparent';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+
+// Add click event listener to the close button element
+closeButton.addEventListener('click', () => {
+// Remove the window element from the body
+document.body.removeChild(windowElement);
+});
+
+// Create the VIDEO button element
+const videoButton = document.createElement('button');
+videoButton.textContent = 'VIDEO';
+videoButton.style.marginTop = '10px';
+videoButton.style.marginRight = '10px';
+videoButton.style.padding = '10px';
+videoButton.style.backgroundColor = 'lightblue';
+videoButton.style.border = 'none';
+videoButton.style.borderRadius = '3px';
+videoButton.style.cursor = 'pointer';
+
+// Add click event listener to the VIDEO button element
+videoButton.addEventListener('click', () => {
+window.open('https://drive.google.com/file/d/1HZKIIuSEgQD0x-YlK19bya-TGanDKJfi/view?usp=sharing');
+});
+
+// Create the TEXT button element
+const textButton = document.createElement('button');
+textButton.textContent = 'TEXT';
+textButton.style.marginTop = '10px';
+textButton.style.padding = '10px';
+textButton.style.backgroundColor = 'lightblue';
+textButton.style.border = 'none';
+textButton.style.borderRadius = '3px';
+textButton.style.cursor = 'pointer';
+
+// Add click event listener to the TEXT button element
+textButton.addEventListener('click', () => {
+window.open('https://docs.google.com/document/d/1h28xEz8zfp71OO4RyDpdEOOLa9XXzvZWVlU4tRpednY/edit#heading=h.4pdl0drutv6q');
+});
+
+// Create the buttons container element
+const buttonsContainer = document.createElement('div');
+buttonsContainer.style.display = 'flex';
+buttonsContainer.style.justifyContent = 'center';
+
+// Add the VIDEO and TEXT button elements to the buttons container element
+buttonsContainer.appendChild(videoButton);
+buttonsContainer.appendChild(textButton);
+
+// Create the window element
+const windowElement = document.createElement('div');
+windowElement.style.position = 'fixed';
+windowElement.style.top = '50%';
+windowElement.style.left = '50%';
+windowElement.style.transform = 'translate(-50%, -50%)';
+windowElement.style.backgroundColor = 'white';
+windowElement.style.padding = '20px';
+windowElement.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+
+// Add the close button element to the window element
+windowElement.appendChild(closeButton);
+
+// Add the message element to the window element
+windowElement.appendChild(message);
+
+// Add the buttons container element to the window element
+windowElement.appendChild(buttonsContainer);
+
+// Add the window element to the body
+document.body.appendChild(windowElement);
+              });
+              $(this).after(btn);
+              buttonExists = true;
+              setTimeout(function() {
+                  $('#test-button').remove();
+                  buttonExists = false;
+              }, 3000);
+          }
+      });
+  });
+})();
 ////Вхідні:
 (function() {
   'use strict';
